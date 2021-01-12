@@ -2,11 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Blogs = ({ blogs, loading }) => {
-  const shortDescription = (description) => {
-    return description.length > 70
-      ? description.substr(0, 70) + "..."
-      : description;
-  };
   if (loading) {
     return (
       <div className="container">
@@ -37,9 +32,7 @@ const Blogs = ({ blogs, loading }) => {
               />
               <div className="card-body">
                 <div className="card-title font-weight-bold">{blog.title}</div>
-                <p className="card-text">
-                  {shortDescription(blog.metadescription)}
-                </p>
+
                 <Link to={`/${blog.slug}`}>Read more</Link>
               </div>
             </div>
